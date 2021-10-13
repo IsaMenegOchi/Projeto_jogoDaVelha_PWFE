@@ -25,6 +25,12 @@
 
 //* FUNÇÕES PARA A APLICAÇÃO
 
+    function jogarNovamente() {
+        
+        location.reload();
+    
+    }
+
     //função de jogar (colocar um simbolo na celula) que recebe o id da celula
     function jogar(id){
         //Variavel celula que possui consigo o id
@@ -109,4 +115,4 @@
         }
     })
 
-    document
+    document.getElementById("continuarJogar").addEventListener("click", jogarNovamente);
