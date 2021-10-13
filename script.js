@@ -25,12 +25,6 @@
 
 //* FUNÇÕES PARA A APLICAÇÃO
 
-    function jogarNovamente() {
-        
-        location.reload();
-    
-    }
-
     //função de jogar (colocar um simbolo na celula) que recebe o id da celula
     function jogar(id){
         //Variavel celula que possui consigo o id
@@ -107,6 +101,23 @@
         }
     }
 
+    
+    function jogarNovamente() {
+        
+        location.reload();
+    
+    }
+
+    function pararJogar() {
+
+        // TEM QUE REDIRECIONAR PARA jogoEncerrado.html
+        window.location.href = "https://www.youtube.com/";
+        // alert("função pararJogar");
+        // window.location('jogoEncerrado.html');
+
+    }
+
+
 
 //* ADICIONANDO EVENTO DE CLICK
     document.addEventListener("click", (event) => {
@@ -116,3 +127,4 @@
     })
 
     document.getElementById("continuarJogar").addEventListener("click", jogarNovamente);
+    document.getElementById("pararJogar").addEventListener("click", pararJogar)
