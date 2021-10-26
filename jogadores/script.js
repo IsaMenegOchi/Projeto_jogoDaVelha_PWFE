@@ -3,14 +3,53 @@
 //* VARIAVEIS E CONSTANTES GLOBAIS
 //criando constante para pegar todas as classes "celulas"
 const celulas = document.querySelectorAll(".celula");
+const celula = document.getElementById("0")
 
 //
 let checarVezJogada = true;
 
 //Criando constante para cada jogadar para escrever na celula
+const div = document.getElementById("tabuleiro")
+
 const JOGADOR_X = "X";
 
 const JOGADOR_O = "O";
+
+pontoO = 0;
+pontoX = 0;
+
+function marcarPonto(vencedor) {
+    console.log(vencedor);
+   switch(vencedor){
+       
+        case "X":
+            pontoX += 1;
+            document.getElementById("placarJogador1").innerText = pontoX;
+        break;
+        case "O":
+            pontoO += 1;
+            document.getElementById("placarJogador2").innerText = pontoO;
+        break;
+   }
+}
+function mostrarVez(vezJogada){
+    let vez;
+    let apagarVez
+    switch(vezJogada){
+        case "O":
+            vez = document.getElementById("x").style.display = "flex"
+            apagarVez = document.getElementById("o").style.display = "none"
+        break;
+        case "X":
+            vez = document.getElementById("o").style.display = "flex"
+            apagarVez = document.getElementById("x").style.display = "none"
+        break;
+        default:
+            apagarVez = document.getElementById("x","o").style.display = "none"
+        break;
+   }
+}
+
 
 const combinacoesGanhar = [
     [0, 1, 2],
@@ -43,6 +82,8 @@ function jogar(id) {
     celula.textContent = vezJogada;
     celula.classList.add(vezJogada);
     declararVencedor(vezJogada);
+    mostrarVez(vezJogada);
+   
 }
 
 function declararVencedor(vezJogada) {
@@ -51,16 +92,21 @@ function declararVencedor(vezJogada) {
             return celulas[index].classList.contains(vezJogada);
         });
     });
+    
 
     if (vencedor) {
         encerrarJogo(vezJogada);
-    } else if (declararEmpate()) {
+        marcarPonto(vencedor);
+    } 
+    else if (declararEmpate()) {
         encerrarJogo();
-    } else {
+    } 
+    else {
         //Esse faz com que o ciclo de um acabe, ou seja, ele possa alternar entre X e O
         //Fazendo com que a vez da jogada seja falso, e alternando o jogador X para o O
         checarVezJogada = !checarVezJogada;
     }
+   
 }
 
 function declararEmpate() {
@@ -90,21 +136,24 @@ function encerrarJogo(vencedor = null) {
 
     if (vencedor) {
         h1.innerHTML = `O player ${vencedor} venceu`;
+        marcarPonto(vencedor);
+
     } else {
         h1.innerHTML = "Empate";
     }
 }
 
 function jogarNovamente() {
-    location.reload();
+    telaReiniciar.style.display = "none";
+    // const celula
+    celulas.forEach(e => e.innerHTML = "");
 }
 
 function pararJogar() {
-    // TEM QUE REDIRECIONAR PARA jogoEncerrado.html
-    window.location.href = "https://www.youtube.com/";
-    // alert("função pararJogar");
-    // window.location('jogoEncerrado.html');
+    window.location.href = "../index.html";
 }
+
+
 
 //* ADICIONANDO EVENTO DE CLICK
 document.addEventListener("click", (event) => {

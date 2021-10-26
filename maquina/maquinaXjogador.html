@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styleJogadores.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Iceland&family=Roboto&display=swap" rel="stylesheet">
+        
+        <script src="script2.js" defer></script>
+    
+    <title>Jogo da velha</title>
+</head>
+
+
+<body>
+    <div id="telaReiniciar">
+        <div class="containerReiniciar">
+            <h1 id="statusJogo"></h1>
+            <div class="containerBotoes">
+                <button class="botao" id="pararJogar" onclick="inicia()">
+                    Parar de jogar
+                </button>
+                <button class="botao" id="continuarJogar">
+                    Jogar novamente
+                </button>
+            </div>
+        </div>
+    </div>
+    <header class="placar">
+        <h2 class="placarJogador1" id="placarJogador1">0</h2>
+        <h2 class="divisaoPlacar">:</h2>
+        <h2 class="placarJogador2" id="placarJogador2">0</h2>
+    </header>
+    
+    <main class="container">
+        <div class="jogador 1">
+            <img class="imgjogador" src="img/womanB1.png" alt="">
+            <h3>Jogador 1</h3>
+            <img class="imgSimbX" src="img/X.png" alt="">
+            <div class="vezJogar">
+                <p>Sua vez</p>
+            </div>
+        </div>
+
+        <div class="tabuleiro">
+            <div class="celula" id="c0"  onclick="jogar(1)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c1" onclick="jogar(2)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c2" onclick="jogar(3)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c3" onclick="jogar(4)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c4" onclick="jogar(5)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c5" onclick="jogar(6)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c6" onclick="jogar(7)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c7" onclick="jogar(8)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+            <div class="celula" id="c8" onclick="jogar(9)">
+                <!-- <img id="simbolo" src="" alt=""> -->
+            </div>
+        </div>
+
+        <div class="jogador 2">
+            <img class="imgjogador" src="img/manY2.png" alt="">
+            <h3>Jogador 2</h3>
+            <img class="imgSimbO" src="img/O.png" alt="">
+            <div class="vezJogar" >
+                <p>Sua vez</p>
+            </div>
+        </div>
+
+    </main>
+    
+</body>
+</html>
