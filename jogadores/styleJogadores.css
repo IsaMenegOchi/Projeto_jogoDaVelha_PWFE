@@ -148,7 +148,7 @@ header{
 }
 
 .vezJogar{
-    background-color: aqua;
+    background-color: cadetblue;
     width: 200px;
     height: 70px;
     display: none;
@@ -157,7 +157,7 @@ header{
     position: absolute;
     bottom: 240px;
     z-index: -2;
-    
+    border-radius: 5px;
 }
 
 #x{
@@ -254,26 +254,23 @@ header{
         /* margin-bottom: 60px; */
     }
 
-    .tabuleiro {
+    .container .tabuleiro {
         width: 10%;
         height: 20%;
         grid-gap: 10px;
-        margin-right: 150px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
     }
     .celula {
         width: 100px;
         height: 100px;
     }
         
-
-
     img {
         max-height: 100px;
         max-width: 100px;
     }
-
-
-
 
     .jogador {
         gap: 10px;
@@ -293,27 +290,34 @@ header{
         margin-top: 260px;
         margin-bottom: 15px;
     }
-
     #jogador-1 .imgSimbX {
         max-width: 50px;
         max-height: 50px;
     }
 
+    #jogador-2 {
+        margin-top: 15px;
+    }
     #jogador-2 .imgSimbO {
         max-width: 60px;
         max-height: 60px;
+        margin-bottom: 15px;
     }
 
     
     
 
     .vezJogar{
-        background-color: aqua;
-        width: 175px;
-        height: 70px;
+        background-color: cadetblue;
+        width: 100px;
+        height: 35px;
         display: none;
         align-items: center;
         justify-content: center;
-      
+        top: 0;
+    }
+
+    .vezJogar p {
+        font-size: 1.6rem;
     }
 }
