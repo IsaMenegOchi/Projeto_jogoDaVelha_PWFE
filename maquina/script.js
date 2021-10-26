@@ -2,9 +2,13 @@
 
 //* VARIAVEIS E CONSTANTES GLOBAIS
 //criando constante para pegar todas as classes "celulas"
-const celulas = document.querySelectorAll(".celula");
+const celulasNode = document.querySelectorAll(".celula");
+const celulasArr = Array.from(celulasNode);
+
+
 const celula = document.getElementById("0")
 
+var nivel = 1;
 //
 let checarVezJogada = true;
 
@@ -31,6 +35,7 @@ function marcarPonto(vencedor) {
         break;
    }
 }
+
 function mostrarVez(vezJogada){
     let vez;
     let apagarVez
@@ -61,6 +66,11 @@ const combinacoesGanhar = [
     [2, 4, 6],
 ];
 
+
+function percorrerCelulasVazias(){
+    const declararMaior6 = (arr) => arr.innerHTML ==""
+    celulasArr.filter(declararMaior6)
+}
 //* FUNÇÕES PARA A APLICAÇÃO
 
 //função de jogar (colocar um simbolo na celula) que recebe o id da celula
@@ -68,6 +78,27 @@ function jogar(id) {
     //Variavel celula que possui consigo o id
     const celula = document.getElementById(id);
 
+    switch(nivel){
+        case 1:
+            if(percorrerCelulas() && checarVezJogada == false){
+                // Math.floor(Math.random() * celulas.length)
+                // console.log(!!Object.values(celulas).length)
+                // celulasArr = Math.round(Math.random()*2)
+                // while (percorrerCelulas() > 1 && checarVezJogada == false){
+                //     celulasArr.innerHTML="O"
+                // }
+                // return vezJogada == true;
+            }
+            
+        break;
+
+        case 2:
+        break;
+
+        case 3:
+        break;
+    }
+    
     /* 
         Ternário para a jogada
             Se checar a vez da jogada for verdadeiro, executar JOG_X, senão, executar JOG_O
@@ -88,7 +119,7 @@ function jogar(id) {
 function declararVencedor(vezJogada) {
     const vencedor = combinacoesGanhar.some((comb) => {
         return comb.every((index) => {
-            return celulas[index].classList.contains(vezJogada);
+            return celulasNode[index].classList.contains(vezJogada);
         });
     });
     
@@ -112,14 +143,14 @@ function declararEmpate() {
     let x = 0;
     let o = 0;
 
-    for (index in celulas) {
+    for (index in celulasNode) {
         if (!isNaN(index)) {
-            if (celulas[index].classList.contains(JOGADOR_X)) {
+            if (celulasNode[index].classList.contains(JOGADOR_X)) {
                 x++;
             }
         }
         if (!isNaN(index)) {
-            if (celulas[index].classList.contains(JOGADOR_O)) {
+            if (celulasNode[index].classList.contains(JOGADOR_O)) {
                 o++;
             }
         }
