@@ -11,27 +11,64 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-   user-select: none;
+    user-select: none;
+}
+
+.icons {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-between;    
+    /* gap: 20px; */
+
+}
+
+.water{
+    margin-left: 130px;
+    max-width: 150px;
+    max-height: 200px;
+    /* top: 70px;
+    right: 200px; */
+}
+
+.fire{
+    margin-right: 130px;
+    max-width: 150px;
+    max-height: 200px;
+    /* bottom: 70px;
+    left: 200px; */
+}
+
+h2 {
+    font-size: 4rem;
+    font-family: 'Iceland', cursive;
+    color: #391745;
+    /* margin-right: 10px; */
 }
 
 h1{
-    font-size: 200px;
+    font-size: 8.5rem;
     font-family: 'Iceland', cursive;
     color: #391745;
-}
-
-div{
-    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
- 
+    margin-bottom: 40px;
+}
+
+
+.buttons{
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
 button{
     padding: 10px;
-    font-size: 80px;
+    font-size: 3.7rem;
     font-family: 'Iceberg', cursive;
     color: white;
     background-color: #391745;
@@ -41,38 +78,70 @@ button:hover{
     -webkit-box-shadow: 12px 12px 29px rgb(65, 65, 65);
 }
 
-img{
-    position: absolute;
-    -webkit-user-drag: none;
-}
 
-.water{
-    width: 250px;
-    height: 320px;
-    top: 70px;
-    right: 200px;
-}
+@media (max-width: 1900px) {
 
-.fire{
-    width: 220px;
-    height: 320px;
-    bottom: 70px;
-    left: 200px;
-}
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.velha1{
-    width: 400px;
-    height: 450px;
-    position: absolute;
-    top: 350px;
-    left: 400px;
-}
+    .icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;    
+    }
 
-.velha2{
-    width: 400px;
-    height: 450px;
-    position: absolute;
-    right: 500px;
-    bottom: 300px;
+    .water{
+        max-width: 90px;
+        max-height: 120px;
+    }
+    
+    .fire{
+        max-width: 90px;
+        max-height: 120px;
+    }
+
+    .icons h2 {
+        font-size: 3rem;
+        margin-left: 20px;
+        margin-right: 25px;
+    }
+
+    h1{
+        font-size: 4.2rem;
+        /* width: 300px; */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    button{
+        /* padding: 10px; */
+        font-size: 2.2rem;
+        font-family: 'Iceberg', cursive;
+        color: white;
+        background-color: #391745;
+    }
+
+    button:hover{
+        -webkit-box-shadow: 6px 6px 14px rgb(65, 65, 65);
+    }
 
 }

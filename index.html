@@ -12,26 +12,28 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Iceland&family=Roboto&display=swap" rel="stylesheet">
 
-        <script src="script2.js"></script>
-
+        <!-- <script src="script2.js"></script> -->
 
         <title>Jogo da velha</title>
     </head>
 
     <body>
         <main>
-            <img class="water" src="img/water.png" alt="">
-       
-            <img class="velha1" src="img/velha1.png" alt="">
+
+            <div class="icons">
+                <img class="water" src="img/water.png" alt="">
+                <h2>X</h2>
+                <!-- <img class="versus" src="img/player-versus-player.png" alt=""> -->
+                <img class="fire" src="img/fire.png" alt="">
+            </div>
 
             <h1>Jogo da velha</h1>
-            <div>
-                <button onclick="javascript:window.location.href ='./jogadores/jogadorXjogador.html'">player X player</button>
+
+            <div class="buttons">
                 <button onclick="javascript:window.location.href ='./maquina/maquinaXjogador.html'">Máquina</button>
+                <button onclick="javascript:window.location.href ='./jogadores/jogadorXjogador.html'">Player X Player</button>
             </div>
             
-            <img class="fire" src="img/fire.png" alt="">
-            <img class="velha2" src="img/velha2.png" alt="">
         </main>
         
     </body>

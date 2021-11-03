@@ -66,6 +66,7 @@ header{
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(100px, 1fr);
     grid-template-areas:
+    
         "celula1 celula2 celula3"
         "celula4 celula5 celula6"
         "celula7 celula8 celula9";

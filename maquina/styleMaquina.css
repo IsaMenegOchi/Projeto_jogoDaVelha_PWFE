@@ -1,4 +1,4 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -14,16 +14,15 @@ body {
     background-color: #fbff0025;
 }
 
-/* .titulo {
+.titulo {
     height: 15%;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 35px;
     background-image: linear-gradient(to top, blue, red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-} */
+}
 
-/* * PONTUAÇÃO */
 header{
     height: 20vh;
     width: 100%;
@@ -48,7 +47,6 @@ header{
 }
 
 
-/* * MAIN - RESTANTE */
 .container {
     width: 100%;
     height: 100%;
@@ -76,7 +74,6 @@ header{
     border: 2px;
     background-color: #E6E3DC;
     border-radius: 10px;
-    /* border: 5px solid #81830148; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +114,6 @@ header{
     grid-area: celula9;
 }
 
-/* * JOGADOR */
 
 .jogador{
     display: flex;
@@ -168,7 +164,6 @@ header{
 }
 
 
-/* PARTE DE REINICIAR JOGO */
 #telaReiniciar {
     height: 100vh;
     width: 100vw;
@@ -270,9 +265,353 @@ header{
         align-items: center;
         justify-content: center;
       
-        /* z-index: -2; */
         
     }
     
+
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fbff0025;
+}
+
+/* .titulo {
+    height: 15%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 35px;
+    background-image: linear-gradient(to top, blue, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+/* * PONTUAÇÃO */
+header{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 100px;
+    font-family: 'Iceberg', cursive;
+    gap: 20px;
+}
+
+.placarJogador1{
+    background-image: linear-gradient(to top, #0D921A99, #3A58F5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.placarJogador2{
+    background-image: linear-gradient(to top, #F10808DD, #FFC804);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* * MAIN - RESTANTE */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.tabuleiro {
+    min-height: 78%;
+    min-width: 40%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, 1fr);
+    grid-template-areas:
+    
+        "celula1 celula2 celula3"
+        "celula4 celula5 celula6"
+        "celula7 celula8 celula9";
+}
+.celula {
+    width: 370px;
+    height: 320px;
+    border: 2px;
+    background-color: #E6E3DC;
+    border-radius: 10px;
+    /* border: 5px solid #81830148; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 5rem;
+    box-shadow: 4px 4px 6px #00000077;
+}
+
+.celula:hover {
+    box-shadow: 8px 8px 10px #222221AA;
+}
+
+.celula:nth-child(1) {
+    grid-area: celula1;
+}
+.celula:nth-child(2) {
+    grid-area: celula2;
+}
+.celula:nth-child(3) {
+    grid-area: celula3;
+}
+.celula:nth-child(4) {
+    grid-area: celula4;
+}
+.celula:nth-child(5) {
+    grid-area: celula5;
+}
+.celula:nth-child(6) {
+    grid-area: celula6;
+}
+.celula:nth-child(7) {
+    grid-area: celula7;
+}
+.celula:nth-child(8) {
+    grid-area: celula8;
+}
+.celula:nth-child(9) {
+    grid-area: celula9;
+}
+
+/* * JOGADOR */
+
+.jogador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.jogador .imgjogador{
+    width: 370px;
+    height: 370px;
+}
+
+.jogador h3{
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jogador .imgSimbX{
+    width: 60px;
+    height: 70px;
+}
+
+.jogador .imgSimbO{
+    width: 80px;
+    height: 80px;
+}
+
+.vezJogar{
+    background-color: cadetblue;
+    width: 200px;
+    height: 70px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: -2;
+    border-radius: 5px;
+}
+
+#x{
+    display: flex;
+}
+.vezJogar p{
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+
+/* PARTE DE REINICIAR JOGO */
+#telaReiniciar {
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+    display: none;
+    position: absolute;
+    background-color: #000000ff;
+}
+
+.containerReiniciar {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+}
+
+#statusJogo {
+    width: 90%;
+    height: 10%;
+    font-size: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBotoes{
+    display: flex;
+    gap: 80px;
+}
+
+button{
+    padding: 10px;
+    font-size: 80px;
+    font-family: 'Iceberg', cursive;
+    color: white;
+    background-color: #391745;
+}
+
+button:hover{
+   box-shadow: 12px 12px 29px rgb(65, 65, 65);
+}
+
+@media (max-width: 1900px){
+
+    .container {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+
+    .placar {
+        width: 5%;
+        height: 5%;
+        /* clear: both; */
+        position: absolute;
+        font-size: 40px;
+        margin: 0;
+        top: 0;
+        margin-top: 45px;
+        /* margin-bottom: 60px; */
+    }
+
+    .container .tabuleiro {
+        width: 10%;
+        height: 20%;
+        grid-gap: 10px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .celula {
+        width: 100px;
+        height: 100px;
+    }
+        
+    img {
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    .jogador {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .jogador h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        display: inline-block;
+    }
+
+    #jogador-1 {
+        margin-top: 260px;
+        margin-bottom: 15px;
+    }
+    #jogador-1 .imgSimbX {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    #jogador-2 {
+        margin-top: 15px;
+    }
+    #jogador-2 .imgSimbO {
+        max-width: 60px;
+        max-height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .vezJogar{
+        background-color: cadetblue;
+        width: 100px;
+        height: 35px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vezJogar p {
+        font-size: 1.6rem;
+    }
+
+    #telaReiniciar {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .containerReiniciar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #statusJogo {
+        font-size: 2.8rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    /* #telaReiniciar h1 {
+        font-size: 2.8rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    } */
+
+    .containerBotoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .botao {
+        width: 250px;
+        font-size: 2rem;
+    } 
+
 
 }
