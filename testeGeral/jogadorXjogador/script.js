@@ -15,23 +15,21 @@ const JOGADOR_X = "X";
 
 const JOGADOR_O = "O";
 
-// pontoO = 0;
-// pontoX = 0;
+pontoO = 0;
+pontoX = 0;
 
-// function marcarPonto(vencedor) {
-//    switch(vencedor){
-       
-//         case "X":
-//             pontoX += 1;
-//             document.getElementById("placarJogador1").innerText = pontoX;
-//         break;
-//         case "O":
-//             pontoO += 1;
-//             document.getElementById("placarJogador2").innerText = pontoO;
-//         break;
-//    }
-// }
-
+function marcarPonto(vencedor) {
+   switch(vencedor){
+        case "X":
+            pontoX += 1;
+            document.getElementById("placarJogador1").innerText = pontoX;
+        break;
+        case "O":
+            pontoO += 1;
+            document.getElementById("placarJogador2").innerText = pontoO;
+        break;
+   }
+}
 function mostrarVez(vezJogada){
     let vez;
     let apagarVez
@@ -45,7 +43,7 @@ function mostrarVez(vezJogada){
             apagarVez = document.getElementById("x").style.display = "none"
         break;
         default:
-            apagarVez = document.getElementById("x","o").style.display = "none"
+            apagarVez = document.getElementById("o").style.display = "none"
         break;
    }
 }
@@ -93,10 +91,9 @@ function declararVencedor(vezJogada) {
         });
     });
     
-
     if (vencedor) {
         encerrarJogo(vezJogada);
-        // marcarPonto(vencedor);
+        marcarPonto(vencedor);
     } 
     else if (declararEmpate()) {
         encerrarJogo();
@@ -137,6 +134,7 @@ function encerrarJogo(vencedor = null) {
     if (vencedor) {
         h1.innerHTML = `O player ${vencedor} venceu`;
         marcarPonto(vencedor);
+    
 
     } else {
         h1.innerHTML = "Empate";
@@ -144,9 +142,9 @@ function encerrarJogo(vencedor = null) {
 }
 
 function jogarNovamente() {
-    // telaReiniciar.style.display = "none";
-    location.reload();
-    // celulas.forEach(e => e.innerHTML = "");
+    telaReiniciar.style.display = "none";
+    // const celula
+    celulas.forEach(e => e.innerHTML = "");
 }
 
 function pararJogar() {

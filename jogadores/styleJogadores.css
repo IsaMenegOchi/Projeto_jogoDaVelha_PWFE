@@ -154,8 +154,6 @@ header{
     display: none;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 240px;
     z-index: -2;
     border-radius: 5px;
 }
@@ -200,20 +198,21 @@ header{
     justify-content: center;
 }
 
-.containerBotoes {
-    width: 90%;
-    height: 30%;
+.containerBotoes{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 120px;
+    gap: 80px;
 }
 
-.botao {
-    width: 300px;
-    height: 150px;
-    font-size: 50px;
+button{
+    padding: 10px;
+    font-size: 80px;
+    font-family: 'Iceberg', cursive;
+    color: white;
+    background-color: #391745;
+}
+
+button:hover{
+   box-shadow: 12px 12px 29px rgb(65, 65, 65);
 }
 
 @media (max-width: 1900px){

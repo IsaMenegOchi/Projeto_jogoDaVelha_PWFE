@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #E8E8CF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   user-select: none;
+}
+
+h1{
+    font-size: 200px;
+    font-family: 'Iceland', cursive;
+    color: #391745;
+}
+
+div{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+ 
+}
+
+button{
+    padding: 10px;
+    font-size: 80px;
+    font-family: 'Iceberg', cursive;
+    color: white;
+    background-color: #391745;
+}
+
+button:hover{
+    -webkit-box-shadow: 12px 12px 29px rgb(65, 65, 65);
+}
+
+img{
+    position: absolute;
+    -webkit-user-drag: none;
+}
+
+.water{
+    width: 250px;
+    height: 320px;
+    top: 70px;
+    right: 200px;
+}
+
+.fire{
+    width: 220px;
+    height: 320px;
+    bottom: 70px;
+    left: 200px;
+}
+
+.velha1{
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    top: 350px;
+    left: 400px;
+}
+
+.velha2{
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    right: 500px;
+    bottom: 300px;
+
+}

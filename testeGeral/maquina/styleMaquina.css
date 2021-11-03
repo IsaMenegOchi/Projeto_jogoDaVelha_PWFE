@@ -148,12 +148,14 @@ header{
 }
 
 .vezJogar{
-    background-color: cadetblue;
+    background-color: aqua;
     width: 200px;
     height: 70px;
     display: none;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 240px;
     z-index: -2;
     
 }
@@ -213,7 +215,6 @@ header{
     height: 150px;
     font-size: 50px;
 }
-
 
 @media (max-width: 1900px){
     .container {
